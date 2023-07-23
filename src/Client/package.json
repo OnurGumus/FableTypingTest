@@ -1,0 +1,18 @@
+{
+  "name": "fable_typing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "echo Starting the development server && dotnet fable watch . -s -o build --runFast vite",
+    "build": "dotnet fable clean --yes  && dotnet fable . -o build && vite build"
+  },
+   "devDependencies": {
+    "@types/node": "latest",
+    "typescript": "latest",
+    "vite": "latest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
