@@ -23,7 +23,7 @@ module Program =
             (update: 'msg -> 'model -> 'model * 'order)
             (execute: 'order -> Dispatch<'msg> -> unit) =
         let convert (model, order) = 
-            model, order |> execute |> Cmd.ofSub
+            model, order |> execute |> Cmd.ofEffect
         Program.mkHidden
             (init >> convert)
             (fun msg model -> update msg model |> convert)
@@ -34,7 +34,7 @@ module Program =
             (view: 'model -> Dispatch<'msg> ->'view)
             (execute: 'order -> Dispatch<'msg> -> unit) =
         let convert (model, order) = 
-            model, order |> execute |> Cmd.ofSub
+            model, order |> execute |> Cmd.ofEffect
 
         Program.mkProgram
             (init >> convert)
