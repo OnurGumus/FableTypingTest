@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{67AE2E71-341
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Client", "src\Client\Client.fsproj", "{60B430EE-4008-4364-8F07-D925425D59B5}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MVU", "src\MVU\MVU.fsproj", "{F8A6FDB3-614C-4A37-AD92-CCDB44A94FC8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +22,13 @@ Global
 		{60B430EE-4008-4364-8F07-D925425D59B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60B430EE-4008-4364-8F07-D925425D59B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60B430EE-4008-4364-8F07-D925425D59B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8A6FDB3-614C-4A37-AD92-CCDB44A94FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8A6FDB3-614C-4A37-AD92-CCDB44A94FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8A6FDB3-614C-4A37-AD92-CCDB44A94FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A6FDB3-614C-4A37-AD92-CCDB44A94FC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{60B430EE-4008-4364-8F07-D925425D59B5} = {67AE2E71-3418-4A22-BA97-ADED7A3876A1}
+		{F8A6FDB3-614C-4A37-AD92-CCDB44A94FC8} = {67AE2E71-3418-4A22-BA97-ADED7A3876A1}
 	EndGlobalSection
 EndGlobal

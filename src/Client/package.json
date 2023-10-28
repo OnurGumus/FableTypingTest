@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "echo Starting the development server && dotnet fable watch . -s -o build --runFast vite",
+    "start": "echo Starting the development server && dotnet fable watch . -s -o build --runFast vite --host",
     "build": "dotnet fable clean --yes  && dotnet fable . -o build && vite build"
   },
    "devDependencies": {
     "@types/node": "latest",
     "typescript": "latest",
-    "vite": "latest"
+    "lit":"latest",
+    "vite": "4.5.0"
   },
   "keywords": [],
   "author": "",
