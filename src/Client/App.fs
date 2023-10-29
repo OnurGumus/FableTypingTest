@@ -11,7 +11,7 @@ open MVU.Core
 open Elmish
 open Lit.Elmish
 
-
+let token = Lit.HMR.createToken()
 module Program =
     /// <summary>
     /// Program with user-defined orders instead of usual command.
@@ -139,17 +139,25 @@ let viewTime (timer : Time) =
  
 [<HookComponent>]
 let view (model: TypingModel) dispatch =
-   
+    Hook.useHmr token
+    let classes = Lit.classes [
+        match model.Status with
+        | Correct ->  "correct", true
+        | Wrong ->  "wrong", true
+        | Complete ->  "complete", true
+        | _ -> "", false
+    ]
+
     html $"""
         <article class="intro">
-            <p>This is a typingg test. Your goal is to duplicate the provided text, EXACTLY, in the field below. The timer starts when you start typing, and only stops when you match this text exactly. Good Luck!</p>
+            <p>This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field below. The timer starts when you start typing, and only stops when you match this text exactly. Good Luck!</p>
         </article>
         <section class="test-area">
             <div id="origin-text">
-                <p>This is a typing test.</p>
+                <p>{model.TargetText}</p>
             </div>
 
-            <div class="test-wrapper">
+            <div class="test-wrapper {classes}">
                 <textarea id="test-area" @keyup={Ev( fun e -> dispatch (TextUpdated !!(e.target?value)))} 
                     @keypress={Ev( fun _ -> dispatch (KeyPress))}
                     name="textarea" rows="6" .value={model.CurrentText} placeholder="The clock starts when you start typing."></textarea>

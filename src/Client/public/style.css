@@ -187,3 +187,15 @@ body {
     color: white;
     background-color: #E95D0F;
 }
+
+.correct {
+    border-color : #65CCf3;
+}
+
+.wrong {
+    border-color : #E95D0F;
+}
+
+.complete {
+    border-color : #429890;
+}
