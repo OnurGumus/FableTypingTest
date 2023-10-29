@@ -7,11 +7,19 @@
     "start": "echo Starting the development server && dotnet fable watch . -s -o build --runFast vite --host",
     "build": "dotnet fable clean --yes  && dotnet fable . -o build && vite build"
   },
+   "dependencies": {
+    "lit":"latest",
+    "@react-three/fiber":"latest",
+    "three" : "latest"
+  },
    "devDependencies": {
     "@types/node": "latest",
     "typescript": "latest",
-    "lit":"latest",
-    "vite": "4.5.0"
+    "vite": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "@types/three":"latest"
   },
   "keywords": [],
   "author": "",

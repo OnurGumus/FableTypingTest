@@ -115,6 +115,14 @@ open Elmish
 open Lit
 open Lit.Elmish
 
+module ReactLib =
+    open Feliz
+
+
+    [<ReactComponent(import="About", from="./About.tsx")>]
+    let About (title: string) = React.imported()
+
+let ReactLitComponent = React.toLit ReactLib.About
 let stopTimer () =
     window.clearInterval !!(window?myInterval)
     window?myInterval <- null
@@ -149,6 +157,7 @@ let view (model: TypingModel) dispatch =
     ]
 
     html $"""
+        {ReactLitComponent("foo")}
         <article class="intro">
             <p>Thiss is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field below. The timer starts when you start typing, and only stops when you match this text exactly. Good Luck!</p>
         </article>
