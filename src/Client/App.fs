@@ -10,6 +10,7 @@ open MVU.Core
 
 open Elmish
 open Lit.Elmish
+open Elmish.HMR 
 
 let token = Lit.HMR.createToken()
 module Program =
@@ -111,9 +112,7 @@ module Program =
 
 // failwith "Add event listener for reset button"
 
-open Elmish
 open Lit
-open Lit.Elmish
 
 let stopTimer () =
     window.clearInterval !!(window?myInterval)

@@ -8,3 +8,4 @@ nuget Fable.Core 4.2.0
 nuget Fable.Lit 1.4.0
 nuget Fable.Lit.Elmish 1.4.0
 nuget FSharp.Core content: none
+nuget Fable.Elmish.HMR
