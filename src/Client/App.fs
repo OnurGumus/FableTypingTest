@@ -137,7 +137,7 @@ let viewTime (timer : Time) =
             section.ToString()
     leadingZero(timer.[0]) + ":" + leadingZero(timer.[1]) + ":" + leadingZero(timer.[2]);
  
-[<HookComponent>]
+[<HookComponent()>]
 let view (model: TypingModel) dispatch =
     Hook.useHmr token
     let classes = Lit.classes [
@@ -150,7 +150,7 @@ let view (model: TypingModel) dispatch =
 
     html $"""
         <article class="intro">
-            <p>This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field below. The timer starts when you start typing, and only stops when you match this text exactly. Good Luck!</p>
+            <p>Thiss is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field below. The timer starts when you start typing, and only stops when you match this text exactly. Good Luck!</p>
         </article>
         <section class="test-area">
             <div id="origin-text">
@@ -173,9 +173,27 @@ let view (model: TypingModel) dispatch =
         </section> 
             """
 
+    
+[<LitElement("fable-typing")>]
+let LitElement () =
+    Hook.useHmr token
+ 
+    
 
+    let host, prop = LitElement.init (fun config -> 
+   
+        config.useShadowDom <- false
+    )
+    
+    let program =
+        Program.mkHiddenProgramWithOrderExecute 
+            (init) (update) (execute)
+            |> Program.withConsoleTrace
 
-Program.mkProgramWithOrderExecute MVU.Core.init (MVU.Core.update) view execute
-|> Program.withLitOnElement (document.querySelector "main")
-|> Program.withConsoleTrace
-|> Program.run
+    let model, dispatch = Hook.useElmish program
+    view model dispatch
+
+// Program.mkProgramWithOrderExecute MVU.Core.init (MVU.Core.update) view execute
+// |> Program.withLitOnElement (document.querySelector "main")
+// |> Program.withConsoleTrace
+// |> Program.run

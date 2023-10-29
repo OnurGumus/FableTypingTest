@@ -1,13 +1,17 @@
 import { defineConfig  } from 'vite'
 
 export default defineConfig({
-    server: {
-        watch: {
-          ignored: [ "**/*.fs"]
-        },
-        hmr: {
-          clientPort: 5173,
-          protocol: 'ws'
-        }
-      }
+  server: {
+    watch: {
+      ignored: [ "**/*.fs"]
+    },
+
+    port: 5183,
+    https: false,
+    strictPort: true,
+    hmr: {
+      clientPort: 5183,
+      protocol: 'ws'
+    }
+  }
 })
