@@ -1,6 +1,9 @@
 import { defineConfig  } from 'vite'
 
 export default defineConfig({
+  define: {
+    "global": {},
+},
   server: {
     watch: {
       ignored: [ "**/*.fs"]

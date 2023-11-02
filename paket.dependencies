@@ -9,3 +9,4 @@ nuget Fable.Lit 1.4.0
 nuget Fable.Lit.Elmish 1.4.0
 nuget FSharp.Core content: none
 nuget Feliz
+nuget Fable.Elmish.Debugger

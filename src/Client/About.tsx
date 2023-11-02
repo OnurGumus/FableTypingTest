@@ -25,17 +25,18 @@ function Box(props) {
         onPointerOver={(event) => setHover(true)}
         onPointerOut={(event) => setHover(false)}>
         <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+        <meshPhongMaterial color={hovered ? 'white' : 'red'} />
       </mesh>
     )
   }
   
 interface IAboutProps { title : string ; }
 export const About = (props:IAboutProps  ) => {
+    console.log(props.title)
     return (
         <Canvas>
-        <ambientLight />
-        <pointLight position={[10, 10, 10]} />
+        <ambientLight intensity={10}  />
+        <pointLight intensity={3} position={[20, 10, 10]} />
         <Box position={[-1.2, 0, 0]} />
         <Box position={[1.2, 0, 0]} />
       </Canvas>)

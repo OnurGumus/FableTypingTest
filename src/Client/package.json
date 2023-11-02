@@ -19,7 +19,8 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@vitejs/plugin-react": "latest",
-    "@types/three":"latest"
+    "@types/three":"latest",
+    "remotedev":"latest"
   },
   "keywords": [],
   "author": "",

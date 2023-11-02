@@ -4,7 +4,7 @@ open Fable.Core.JsInterop
 open Fable.Import
 open Browser.Types
 open Browser.Dom
-
+open Elmish.Debug
 open MVU.Model
 open MVU.Core
 
@@ -198,6 +198,7 @@ let LitElement () =
         Program.mkHiddenProgramWithOrderExecute 
             (init) (update) (execute)
             |> Program.withConsoleTrace
+            |> Program.withDebugger
 
     let model, dispatch = Hook.useElmish program
     view model dispatch
