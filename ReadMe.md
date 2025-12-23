@@ -11,14 +11,6 @@ https://www.meetup.com/tackling-f-web-development/events/294416499/
 No frameworks, pure F#. 
 HTML and CSS belongs to someone else.
 
-## Live Demo Online:
-
-https://zealous-field-0fa61df1e.3.azurestaticapps.net/
-
-https://funpizzashop.azurewebsites.net/
-
-
-![](https://raw.githubusercontent.com/OnurGumus/FableTypingTest/main/FableTyping.gif?token=GHSAT0AAAAAAB7MTP3PGPHWIYPYOLAIGXPAZF5G76Q)
 
 
 ## Build steps
@@ -26,8 +18,10 @@ https://funpizzashop.azurewebsites.net/
 Clone the project and in the root folder
 
 ``` bash
+dotnet tool restore
 cd src/Client
-cd npm run start
+npm i
+npm run start
 ```
 
 Then navigate to 
@@ -40,8 +34,10 @@ http://localhost:8080
 ## To build for production 
 
 ``` bash
+dotnet tool restore
 cd src/Client
-cd npm run build
+npm i
+npm run build
 ```
 
 deploy the `src/Client/dist` folder

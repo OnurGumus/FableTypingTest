@@ -9,5 +9,8 @@ export default defineConfig({
           clientPort: 5173,
           protocol: 'ws'
         }
-      }
+      },
+    optimizeDeps: {
+        entries: []
+    }
 })

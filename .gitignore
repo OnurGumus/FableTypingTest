@@ -4,3 +4,4 @@ node_modules/
 build/
 src/Client/.env
 src/Client/dist/
+.claude/settings.local.json
