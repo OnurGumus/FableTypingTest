@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm update:*)",
+      "Bash(dotnet tool update:*)",
+      "Bash(dotnet tool install:*)",
+      "Bash(dotnet tool uninstall:*)",
+      "Bash(lsof:*)",
+      "Bash(curl:*)",
+      "Bash(git checkout:*)",
+      "Bash(npm i)"
+    ]
+  }
+}

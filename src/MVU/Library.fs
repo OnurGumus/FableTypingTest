@@ -48,12 +48,12 @@ module Core=
         | Tick -> { model with Time = updateTime model.Time}, NoEffect
         | StartOver ->  {model with Status = Initial; Time = [0;0;0;0]; CurrentText = ""},StopTimer
         | KeyPress when model.Status = Initial -> { model with Status = JustStarted},StartTimer
-        | TextUpdated text ->
+        | TextUpdated text when model.Status <> Complete ->
             let model = {model with CurrentText = text}
-            let originTextMatch = model.TargetText.Substring(0,model.CurrentText.Length);
             if model.CurrentText = model.TargetText then
                 {model with Status = Complete},StopTimer
-            else if model.CurrentText = originTextMatch then
+            else if model.CurrentText.Length < model.TargetText.Length
+                 && model.TargetText.StartsWith model.CurrentText then
                 { model with Status = Correct},NoEffect
             else
                 {model with Status = Wrong},NoEffect
