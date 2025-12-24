@@ -2,9 +2,9 @@ source https://api.nuget.org/v3/index.json
 
 storage: none
 framework: auto-detect
-nuget Elmish 4.1.0
-nuget Fable.Browser.Dom 2.14.0
-nuget Fable.Core 4.2.0
-nuget Fable.Lit 1.4.0
-nuget Fable.Lit.Elmish 1.4.0
+nuget Elmish
+nuget Fable.Browser.Dom
+nuget Fable.Core
+nuget Fable.Lit 
+nuget Fable.Lit.Elmish 
 nuget FSharp.Core content: none
