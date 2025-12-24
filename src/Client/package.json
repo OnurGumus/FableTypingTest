@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "echo Starting the development server && dotnet fable watch . -s -o build --runFast vite",
+    "start": "echo Starting the development server && dotnet fable watch . -s -o build --runFast \"vite dev\"",
     "build": "dotnet fable clean --yes  && dotnet fable . -o build && vite build"
   },
    "devDependencies": {

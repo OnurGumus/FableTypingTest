@@ -16,13 +16,13 @@ let update (model : TypingModel) = function
     | Tick -> { model with Time = updateTime model.Time}
     | StartOver ->  {model with Status = Initial; Time = [0;0;0;0]; CurrentText = ""}
     | KeyPress when model.Status = Initial -> { model with Status = JustStarted}
-    | TextUpdated text ->
+    | TextUpdated text when model.Status <> Complete ->
         let model = {model with CurrentText = text}
-        let originTextMatch = model.TargetText.Substring(0,model.CurrentText.Length);
         if model.CurrentText = model.TargetText then
             {model with Status = Complete}
-        else if model.CurrentText = originTextMatch then
-            { model with Status = Correct}
+        else if model.CurrentText.Length < model.TargetText.Length
+             && model.TargetText.StartsWith model.CurrentText then
+            {model with Status = Correct}
         else
             {model with Status = Wrong}
     | _ -> model

@@ -35,8 +35,9 @@ let view {Status = status ; Time = time} (dispatcher: MailboxProcessor<Message>)
     match status with
     | Initial ->
         testArea.value <- ""
+        testArea.disabled <- false
         theTimer.innerHTML <- "00:00:00"
-       // testWrapper.style.borderColor <- "grey"
+        testWrapper?style?borderColor <- "grey"
         stopTimer()
     | JustStarted ->
         if !!(window?myInterval) |> isNull then
@@ -53,6 +54,7 @@ let view {Status = status ; Time = time} (dispatcher: MailboxProcessor<Message>)
 
     | Complete ->
         testWrapper?style?borderColor <- "#429890"
+        testArea.disabled <- true
         stopTimer()
 
     viewTime time
